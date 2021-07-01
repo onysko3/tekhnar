@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Реєстрація | Технар - якісна підготовка до ЗНО{% endblock title %}
+
+{% block content %}
+  <h1>РЕЄСТРАЦІЯ</h1>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button class="btn btn-primary" type="submit">Зареєструватись</button>
+  </form>
+  <p>Ще не зареєстровані? <a href="#">Реєстрація</a></p>
+{% endblock content %}

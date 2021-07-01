@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Вхід | Технар - якісна підготовка до ЗНО{% endblock title %}
+
+{% block content %}
+  <div class="mx-auto">
+  <h1>ВХІД</h1>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button class="btn btn-primary" type="submit">Ввійти</button>
+  </form>
+  <p>Ще не зареєстровані? <a href="{% url 'account_signup' %}">Реєстрація</a></p>
+  </div>
+{% endblock content %}
