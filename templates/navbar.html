@@ -26,7 +26,7 @@
       {% if user.is_authenticated %}
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          {{ request.user }}
+          <i class="fas fa-user mr-2"></i>{{ request.user }}
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="#">Action</a>
@@ -34,7 +34,7 @@
           <div class="dropdown-divider"></div>
           <form method="POST" action="{% url 'account_logout' %}">
             {% csrf_token %}
-            <button class="dropdown-item" type="submit">Вихід</button>
+            <button class="dropdown-item" type="submit">Вийти</button>
           </form>
         </div>
       </li>

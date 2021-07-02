@@ -3,5 +3,19 @@
 {% block title %}{{ course }}{% endblock title %}
 
 {% block content %}
-  {{ course }}
+  <div class="row mt-5">
+    <div class="col-md-6 mr-0">
+      <img src="{{ course.picture.url }}" alt="{{ course.title }}"
+           class="img-thumbnail" style="height: 220pt; width: 100%;">
+    </div>
+    <div class="col-md-6 ml-0">
+      <h1 class="text-center">{{ course.title }}</h1>
+      <br>
+      <p><span class="course-main-info">Опис: </span>{{ course.short_description }}</p>
+      <p><span class="course-main-info">Предмет: </span>{{ course.subject }}</p>
+      <p><span class="course-main-info">Викладач: </span>{{ course.first_name }}</p>
+      <p><span class="course-main-info">Рік: </span>{{ course.year }}</p>
+    </div>
+  </div>
+  {{ course.description }}
 {% endblock content %}

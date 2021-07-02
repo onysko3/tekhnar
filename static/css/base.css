@@ -8,14 +8,37 @@ p {
 
 .jumbo-hr {
     border-width: 2pt;
-    border-color: black;
+    border-color: #CFD8DC;;
     width: 160pt;
 }
 
 .jumbo-subject {
     color: rgba(0, 0, 0, 0.66);
+    color: #CFD8DC;
 }
 
 #jumbo-title {
     font-size: 50pt;
+}
+
+#home-arrow {
+    font-size: 40pt;
+}
+
+.home-card {
+    display: flex;
+    flex-flow: column;
+    height: 300px;
+}
+
+
+.course-main-info {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 13pt;
+}
+
+#jumbotron-main {
+    color: #CFD8DC;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

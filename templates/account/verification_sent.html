@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Verify Your E-mail Address" %}{% endblock title %}
+
+{% block style %}
+  <link href="{% static 'css/login.css' %}" rel="stylesheet">
+{% endblock style %}
+
+{% block navbar %}{% endblock navbar %}
+
+{% block content %}
+    <h1>{% trans "Verify Your E-mail Address" %}</h1>
+
+    <p>{% blocktrans %}We have sent an e-mail to you for verification. Follow the link provided to finalize the signup process. Please contact us if you do not receive it within a few minutes.{% endblocktrans %}</p>
+          <div class="text-center">
+        <p class="mb-1"><a class="text-decoration-none" href="mailto:tekhnar.zno@gmail.com"><i
+            class="fas fa-envelope-open mr-1"></i> tekhnar.zno@gmail.com</p></a>
+        <p class="mb-1"><a class="text-decoration-none" href="https://instagram.com/tekhnar_zno"><i
+            class="fab fa-instagram mr-2"></i>@tekhnar_zno</p></a>
+        <p class="mb-0"><a class="text-decoration-none" href="https://t.me/tekhnar_zno"><i
+            class="fab fa-telegram-plane mr-2"></i>@tekhnar_zno</p></a>
+      </div>
+{% endblock content %}

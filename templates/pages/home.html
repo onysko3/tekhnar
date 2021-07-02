@@ -1,8 +1,12 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Освітній проект{% endblock title %}
 
 {% block content %}
   <br>
-  <div class="jumbotron" style="background-color: #E9EDDE;">
+  {#  <div class="jumbotron" style="background-color: #E9EDDE;">#}
+  <div class="jumbotron" style="background-image: url({% static 'image/jumbotron-bg.png' %});" id="jumbotron-main">
     <div class="container">
       <div class="mx-auto text-center">
         <h6 class="jumbo-subject">ФІЗИКА</h6>
@@ -15,8 +19,44 @@
     </div>
   </div>
 
+  <div class="text-center">
+    <a class="text-reset text-decoration-none" href="#more">
+      <h6 class="mb-0">Дізнатися Більше</h6>
+      <i class="fas fa-angle-down home-arrow" id="home-arrow"></i>
+    </a>
+  </div>
+  <br>
+
+
+
+
+  <div class="card">
+    <div class="row no-gutters">
+      <div class="col-auto">
+        <img src="{% static 'image/why-tekhnar.png' %}" class="img-fluid m-0" alt="why"
+             style="height: 180pt; width: auto;">
+      </div>
+      <div class="col">
+        <div class="card-block">
+          <div class="card-header pb-0" style="background-color: #A0CED9;"><h4>ЧОМУ "ТЕХНАР"?</h4></div>
+          <div class="card-body" style="background-color: #c6e5ed;">
+            <p>«Технар» – новостворена українська онлайн-школа з підготовки до ЗНО, яка,
+              навідміну від інших шкіл, дає можливість своїм підписникамбезкоштовноотримувати освіту,
+              переглядаючи всім доступні уроки на YouTube. Для тих, хто бажає займатися далі з одним із
+              наших викладачів, створені спеціальні закриті курси, де кожен може напряму звернутися до
+              вчителя і отримати відповідь</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <br>
+
 
   <div class="card" id="more">
+    <img src="{% static 'image/why-tekhnar.png' %}" class="card-img" alt="why"
+         style="height: 180pt; width: auto;">
     <div class="card-header pb-0" style="background-color: #A0CED9;"><h4>ЧОМУ "ТЕХНАР"?</h4></div>
     <div class="card-body" style="background-color: #c6e5ed;">
       <p>«Технар» – новостворена українська онлайн-школа з підготовки до ЗНО, яка,
@@ -26,24 +66,45 @@
         вчителя і отримати відповідь</p>
     </div>
   </div>
+
+
   <br>
   <div class="card">
-    <div class="card-header pb-0"><h4>YOUTUBE-КАНАЛ</h4></div>
-    <div class="card-body">
-      <p>Ми підтримуємо ідею доступної освіти для всіх, і вважаємо, що кожен, який прагне отримати
-        які-небудь знання з тих чи інших шкільних предметів, повинен мати можливість їх здобути на
-        просторах інтернету. На україномовному YouTube не так багато освітніх матеріалів з математики
-        та фізики, і саме тому наша команда вирішила це виправити</p>
+    <div class="row">
+      <div class="col-md-9">
+        <div class="card-header pb-0" style="background-color: #f1978c;"><h4>YOUTUBE-КАНАЛ</h4></div>
+        <div class="card-body" style="background-color: #ffcbc7;">
+          <p>Ми підтримуємо ідею доступної освіти для всіх, і вважаємо, що кожен, який прагне отримати
+            які-небудь знання з тих чи інших шкільних предметів, повинен мати можливість їх здобути на
+            просторах інтернету. На україномовному YouTube не так багато освітніх матеріалів з математики
+            та фізики, і саме тому наша команда вирішила це виправити</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <img src="{% static 'image/youtube-kanal.png' %}" class="card-img-top home-card"
+             style="height: 180pt; width: auto;" alt="youtube">
+      </div>
     </div>
   </div>
   <br>
   <div class="card">
-    <div class="card-header pb-0"><h4>НА КОГО РОЗРАХОВАНІ КУРСИ «ТЕХНАРЯ»?</h4></div>
-    <div class="card-body">
-      <p>Курси нашої онлайн-школи підійдуть абсолютно для всіх школярів, які мають намір гідно скласти ЗНО
-        з математики чи фізики.</p>
+    <div class="row">
+      <div class="col-md-3">
+        <img src="{% static 'image/school-lesson.png' %}" class="card-img-top home-card"
+             style="height: 180pt; width: auto;" alt="school lesson">
+      </div>
+      <div class="col-md-9">
+        <div class="card-header pb-0" style="background-color: #EFE9F4;"><h4>НА КОГО РОЗРАХОВАНІ КУРСИ «ТЕХНАРЯ»?</h4>
+        </div>
+        <div class="card-body" style="background-color: #EFE9F4;">
+          <p>Курси нашої онлайн-школи підійдуть абсолютно для всіх школярів, які мають намір гідно скласти ЗНО
+            з математики чи фізики.</p>
+        </div>
+      </div>
     </div>
   </div>
+  <br>
+  <br>
   <br>
 
 {% endblock content %}

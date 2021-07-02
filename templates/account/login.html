@@ -1,16 +1,40 @@
 {% extends 'base.html' %}
+{% load static %}
 {% load crispy_forms_tags %}
 
-{% block title %}Вхід | Технар - якісна підготовка до ЗНО{% endblock title %}
+{% block title %}Вхід{% endblock title %}
+
+{% block style %}
+  <link href="{% static 'css/login.css' %}" rel="stylesheet">
+  <style>
+  label{
+      display: none;
+  }
+  .form-group {
+      margin-bottom: 0;
+  }
+  </style>
+{% endblock style %}
+
+{% block navbar %}{% endblock navbar %}
 
 {% block content %}
-  <div class="mx-auto">
-  <h1>ВХІД</h1>
-  <form method="POST">
-    {% csrf_token %}
-    {{ form|crispy }}
-    <button class="btn btn-primary" type="submit">Ввійти</button>
+
+
+  <div class="text-center">
+      <img class="mb-4" src="{% static 'image/logo-72.png' %}" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">ВХІД</h1>
   </form>
-  <p>Ще не зареєстровані? <a href="{% url 'account_signup' %}">Реєстрація</a></p>
+    <form class="form-signin" method="POST">
+      {% csrf_token %}
+      {{ form|crispy }}
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Ввійти</button>
+    </form>
+      <p class="mt-2 mb-2 text-muted">Ще не зареєстровані? <a href="{% url 'account_signup' %}">Реєстрація</a></p>
+      <p class="mt-2 mb-3 text-muted"><a href="{% url 'account_signup' %}">Відновити пароль</a></p>
+    <br><br>
   </div>
+
+
+
 {% endblock content %}
