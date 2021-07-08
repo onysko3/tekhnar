@@ -20,7 +20,7 @@
     {% block style %}
     {% endblock style %}
 
-    <title>{% block title %}{% endblock title %} | Технар - якісна підготовка до ЗНО</title>
+    <title>{% block title %}{% endblock title %} | «Технар» - якісна підготовка до ЗНО</title>
   </head>
   <body>
 
@@ -28,12 +28,32 @@
       {% include 'navbar.html' %}
     {% endblock navbar %}
 
-
-    <div class="container">
+<section class="container-fluid flex-grow">
+    <div class="container flex-grow">
       {% block content %}
       {% endblock content %}
     </div>
+</section>
 
+    {% block footer %}
+{% comment %}<footer class="bg-light text-dark mt-4">
+    <div class="container py-3">
+        <div class="row">
+            <div class="col-md-3">
+                <h5>Технар</h5></div>
+            <div class="col-md-3"></div>
+            <div class="col-md-3"></div>
+          <div class="col-md-3"></div>
+{#            <div class="col-md-3 text-right small align-self-end text-muted mb-2">developed by <a href="https://nysk.xyz">nysk</a></div><br>#}
+        </div>
+        <div class="row">
+            <div class="col-md-6">Освітній онлайн проект</div>
+            <div class="col-md-3"></div>
+            <div class="col-md-3 text-right small align-self-end">&copy;2021</div>
+        </div>
+    </div>
+</footer>{% endcomment %}
+    {% endblock footer %}
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

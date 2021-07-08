@@ -5,9 +5,9 @@
 {% block content %}
 
   <div class="text-center">
-  <h1 class="mt-5 mb-3 text-center">Наші курси</h1>
+  <h1 class="mt-4 mb-3 text-center">Наші курси</h1>
   <p>Курси «Технаря» розроблені спеціально для того, щоб ти міг якомога якісніше
-  підготуватися до Зовнішнього Незалежного Оцінювання. Навчайся разом з нашими професійними
+  підготуватися до зовнішнього незалежного оцінювання. Навчайся разом з нашими професійними
   викладачами та досягай успіхів!</p>
     <br>
   <h5>Обрати курс <br><i class="fas fa-angle-down home-arrow" id="home-arrow"></i></h5>
@@ -18,11 +18,11 @@
   {% for course in course_list %}
     <div class="col-md-6">
   <div class="card mb-3 mb-4">
-  <img class="card-img-top" src="{{ course.picture.url }}" alt="course" style="height: 220pt; width: 100%;">
+  <img class="card-img-top" src="{{ course.picture.url }}" alt="course" style="height: 220pt; width: 100%; object-fit: cover;">
   <div class="card-body">
     <h5 class="card-title">{{ course.title }}</h5>
-    <p class="card-text">{{ course.description|truncatewords_html:63 }}...</p>
-    <p class="card-text text-right"><a class="btn btn-primary" href="{{ course.get_absolute_url }}">Детальніше</a></p>
+    <p class="card-text">{% autoescape off %}{{ course.description|truncatewords_html:63 }}{% endautoescape %}...</p>
+    <p class="card-text text-right"><a class="btn btn-primary stretched-link" href="{{ course.get_absolute_url }}">Детальніше</a></p>
   </div>
 </div>
     </div>

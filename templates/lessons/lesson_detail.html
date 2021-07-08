@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Уроки | {{ lesson.course.title }}{% endblock %}
+
+{% block content %}
+  <h1 class="text-center mt-4">{{ lesson.title }}</h1>
+  <p class="text-muted text-left mb-4">
+    <a class="text-decoration-none text-reset" href="{% url 'course_list' %}">Курси</a>
+     /
+    <a class="text-decoration-none text-reset" href="{{ lesson.course.get_absolute_url }}">{{ lesson.course.title }}</a>
+    /
+    <a class="text-decoration-none text-reset" href="#">Уроки</a>
+    /
+    {{ lesson.title }}
+  </p>
+  <p>{% autoescape off %}
+  {{ lesson.description }}
+  {% endautoescape %}</p>
+
+  <div class="text-center mt-5">
+  <div class="btn-group" role="group" aria-label="Basic example">
+    {% if lesson.youtube %}
+  <a class="btn btn-outline-primary" href="{{ lesson.youtube }}"><i class="fab fa-youtube mr-2"></i>Лекція</a>
+    {% endif %}
+  {% if lesson.materials %}
+  <a class="btn btn-outline-primary" href="{{ lesson.materials }}"><i class="fa fa-books mr-2"></i>Матеріали</a>
+  {% endif %}
+  {% if lesson.homework %}
+  <a class="btn btn-outline-primary" href="{{ lesson.homework }}"><i class="fas fa-home mr-2"></i>Домашнє завдання</a>
+  {% endif %}
+</div>
+  </div>
+
+{% endblock content %}

@@ -49,12 +49,15 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'crispy_forms',
+    'guardian',
 
     # Local
     'accounts',
     'pages',
     'teachers',
     'courses',
+    'posts',
+    'lessons',
 ]
 
 MIDDLEWARE = [
@@ -121,6 +124,7 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
+    'guardian.backends.ObjectPermissionBackend',
 )
 
 LOGIN_REDIRECT_URL = 'home'
@@ -132,6 +136,7 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_SESSION_REMEMBER = True
 ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
+ACCOUNT_SIGNUP_FORM_CLASS = 'accounts.forms.CustomSignupForm'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 

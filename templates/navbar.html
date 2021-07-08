@@ -12,6 +12,9 @@
         <a class="nav-link" href="{% url 'about' %}">Про Технар</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="{% url 'post_list' %}">Блог</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="{% url 'course_list' %}">Курси</a>
       </li>
       <li class="nav-item">
@@ -26,11 +29,10 @@
       {% if user.is_authenticated %}
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-user mr-2"></i>{{ request.user }}
+          <i class="fas fa-user mr-2"></i>{{ request.user.first_name }} {{ request.user.last_name }}
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Мої курси</a>
           <div class="dropdown-divider"></div>
           <form method="POST" action="{% url 'account_logout' %}">
             {% csrf_token %}

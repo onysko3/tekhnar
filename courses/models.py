@@ -8,11 +8,10 @@ class Course(models.Model):
     title = models.CharField('Заголовок', max_length=150)
     short_description = models.TextField('Короткий Опис', max_length=300)
     subject = models.CharField('Предмет', max_length=50)
-    year = models.SmallIntegerField('Рік')
+    start_date = models.DateField('Початок')
     description = models.TextField('Опис')
     slug = models.SlugField('Слаг', unique=True, help_text='Посилання на латиниці. Приклад: matematika-zno-2021')
-    teacher = models.ManyToManyField(Teacher, verbose_name='Викладачі',
-                                     help_text='Виберіть одного або декілька викладачів')
+    teacher = models.ForeignKey(Teacher, verbose_name='Викладач', on_delete=models.CASCADE, related_name='courses')
     picture = models.ImageField('Обкладинка', upload_to='courses/')
     is_published = models.BooleanField('Опублікувати', default=False)
     created = models.DateTimeField('Час створення', auto_now_add=True)

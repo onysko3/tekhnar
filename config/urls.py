@@ -29,6 +29,8 @@ urlpatterns = [
     # Local
     path('courses/', include('courses.urls')),
     path('teachers/', include('teachers.urls')),
+    path('blog/', include('posts.urls')),
+    path('lessons/', include('lessons.urls')),
     path('', include('pages.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

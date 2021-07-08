@@ -1,21 +1,26 @@
+body {
+  min-height: 100vh;
+}
+
+.flex-grow {
+   flex: 1;
+}
+
+
 h1, h2, h3, h4, h5, h6{
     font-family: 'Roboto Condensed', sans-serif;
 }
 
 p {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
 .jumbo-hr {
     border-width: 2pt;
-    border-color: #CFD8DC;;
+    border-color: #1a1a1a;
     width: 160pt;
 }
 
-.jumbo-subject {
-    color: rgba(0, 0, 0, 0.66);
-    color: #CFD8DC;
-}
 
 #jumbo-title {
     font-size: 50pt;
@@ -38,7 +43,18 @@ p {
 }
 
 #jumbotron-main {
-    color: #CFD8DC;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-position: right bottom, left bottom;
+    background-attachment: scroll;
+    background-size: 200pt, 175pt;
+}
+
+
+.icon {
+    vertical-align: middle;
+    font-size: 40px;
+}
+
+.text {
+    font-family: "Courier-new";
 }

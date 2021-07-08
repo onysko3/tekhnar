@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Verify Your E-mail Address" %}{% endblock title %}
+
+{% block style %}
+  <link href="{% static 'css/login.css' %}" rel="stylesheet">
+{% endblock style %}
+
+{% block navbar %}{% endblock navbar %}
+
+{% block content %}
+<h1>{% trans "Account Inactive" %}</h1>
+
+<p>{% trans "This account is inactive." %}</p>
+{% endblock content %}

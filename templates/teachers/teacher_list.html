@@ -3,8 +3,36 @@
 {% block title %}Викладачі{% endblock title %}
 
 {% block content %}
-  <h1 class="mt-5 mb-3 text-center">Викладачі</h1>
+  <h1 class="mt-4 mb-3   text-center">Викладачі</h1>
   {% for teacher in teacher_list %}
-    {{ teacher.first_name }} {{ teacher.last_name }}<br>
+    <div class="row">
+      <div class="col-lg-3 text-center mb-2">
+        <img style="height: 295px;" src="{{ teacher.avatar.url }}" alt="{{ teacher.first_name }} {{ teacher.last_name }}">
+      </div>
+    <div class="col-lg-9">
+      <h3>{{ teacher.last_name }} {{ teacher.first_name }} {{ teacher.patronymic }}</h3>
+        <div class="text-dark">
+      {% if teacher.email %}
+        <p class="mb-1"><a class="text-decoration-none text-reset" href="mailto:tekhnar.zno@gmail.com"><i
+            class="fas fa-envelope-open mr-2"></i>{{ teacher.email }}</p></a>
+    {% endif %}
+    {% if teacher.instagram %}
+        <p class="mb-1"><a class="text-decoration-none text-reset" href="https://www.instagram.com/{{ teacher.instagram }}"><i
+            class="fab fa-instagram mr-2"></i>@{{ teacher.instagram }}</p></a>
+    {% endif %}
+    {% if teacher.facebook %}
+        <p class="mb-1"><a class="text-decoration-none text-reset" href="https://fb.com/{{ teacher.facebook }}"><i
+            class="fab fa-facebook-square mr-2"></i>@{{ teacher.facebook }}</p></a>
+    {% endif %}
+    {% if teacher.telegram %}
+        <p class="mb-1"><a class="text-decoration-none text-reset" href="https://t.me/{{ teacher.telegram }}"><i
+            class="fab fa-telegram mr-2"></i>@{{ teacher.telegram }}</p></a>
+    {% endif %}
+    <p class="mb-1">{{ teacher.summary }}</p>
+    </div>
+    <a class="btn btn-primary float-right" href="{{ teacher.get_absolute_url }}">Детальніше</a>
+    </div>
+    </div>
+    <hr>
   {% endfor %}
 {% endblock content %}

@@ -3,19 +3,22 @@
 {% block title %}{{ course }}{% endblock title %}
 
 {% block content %}
-  <div class="row mt-5">
+  <div class="row mt-4">
     <div class="col-md-6 mr-0">
       <img src="{{ course.picture.url }}" alt="{{ course.title }}"
-           class="img-thumbnail" style="height: 220pt; width: 100%;">
+           class="img-thumbnail" style="height: 220pt; width: 100%; object-fit: cover;">
     </div>
-    <div class="col-md-6 ml-0">
+    <div class="col-md-6 ml-0 mt-3">
       <h1 class="text-center">{{ course.title }}</h1>
-      <br>
-      <p><span class="course-main-info">Опис: </span>{{ course.short_description }}</p>
-      <p><span class="course-main-info">Предмет: </span>{{ course.subject }}</p>
-      <p><span class="course-main-info">Викладач: </span>{{ course.first_name }}</p>
-      <p><span class="course-main-info">Рік: </span>{{ course.year }}</p>
+      <hr>
+      <p><span class="course-main-info"><i class="fas fa-pencil-alt mr-2"></i>Опис: </span>{{ course.short_description }}</p>
+      <p><span class="course-main-info"><i class="fa fa-graduation-cap mr-1"></i>Предмет: </span>{{ course.subject }}</p>
+      <p><span class="course-main-info"><i class="fas fa-user ml-1 mr-2"></i>Викладач: </span>{{ course.teacher }}</p>
+      <p><span class="course-main-info"><i class="fas fa-table mr-2"></i>Початок: </span>{{ course.start_date|date:"d.m.Y" }}</p>
+
     </div>
   </div>
+  {% autoescape off %}
   {{ course.description }}
+  {% endautoescape %}
 {% endblock content %}

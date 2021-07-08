@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ post.title }}{% endblock title %}
+
+{% block content %}
+  <h1 class="text-center mb-3 mt-4">{{ post.title }}</h1>
+  <img class="img-thumbnail mb-2 mr-4 float-left" src="{{ post.picture.url }}" alt="{{ post.title }}"
+           style="height: 100%; width: 200pt; object-fit: cover;">
+  {% autoescape off %}
+    <p>
+      {{ post.description }}
+    </p>
+  {% endautoescape %}
+
+{% endblock content %}

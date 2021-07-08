@@ -1,12 +1,37 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Освітній проект{% endblock title %}
+{% block title %}Освітній проєкт{% endblock title %}
+
+{% block style %}
+  <style>
+  @media only screen and (min-width : 992px){
+      .jumbo-photos {
+          background-image: url({% static 'image/fizik.png' %}), url({% static 'image/matematik.png' %});
+      }
+  }
+
+  .about-us {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+  }
+  @media only screen and (max-width : 767.5px){
+      #youtube-text {
+          text-align: left;
+      }
+  }
+
+
+  </style>
+
+{% endblock style %}
 
 {% block content %}
   <br>
-  {#  <div class="jumbotron" style="background-color: #E9EDDE;">#}
-  <div class="jumbotron" style="background-image: url({% static 'image/jumbotron-bg.png' %});" id="jumbotron-main">
+  {#  <div class="jumbotron" style="background-color: #E9EDDE;">  style="background-image: url({% static 'image/jumbotron-bg.png' %});" #}
+  <div class="jumbotron jumbo-photos" id="jumbotron-main">
     <div class="container">
       <div class="mx-auto text-center">
         <h6 class="jumbo-subject">ФІЗИКА</h6>
@@ -21,14 +46,27 @@
 
   <div class="text-center">
     <a class="text-reset text-decoration-none" href="#more">
-      <h6 class="mb-0">Дізнатися Більше</h6>
+      <h6 class="mb-0">Дізнатися більше</h6>
       <i class="fas fa-angle-down home-arrow" id="home-arrow"></i>
     </a>
   </div>
   <br>
 
 
-
+    <div class="row">
+      <div class="col-lg-3 col-md-4 col-sm-5 mx-auto">
+        <img class="about-us" src="{% static 'image/why-tekhnar.png' %}" {% comment %}class="img-thumbnail"{% endcomment %} alt="why"
+             style="height: 180pt; width: auto;">
+      </div>
+      <div class="col-lg-9 col-md-8 com-sm-7 my-auto">
+          <h2>ЧОМУ «ТЕХНАР»?</h2>
+            <p>«Технар» – український ресурс з підготовки до ЗНО, який, навідміну від багатьох онлайн-шкіл,
+              дає можливість своїм підписникам безкоштовно отримати базові знання для складання ЗНО, переглядаючи
+              всім доступні уроки на YouTube. Для тих, хто бажає займатися далі з одним із наших викладачів,
+              створені спеціальні курси, де кожен може звернутись до вчителя і отримати допомогу.</p>
+      </div>
+    </div>
+{% comment %}
 
   <div class="card">
     <div class="row no-gutters">
@@ -51,60 +89,38 @@
     </div>
 
   </div>
-  <br>
+  <br>{% endcomment %}
 
 
-  <div class="card" id="more">
-    <img src="{% static 'image/why-tekhnar.png' %}" class="card-img" alt="why"
-         style="height: 180pt; width: auto;">
-    <div class="card-header pb-0" style="background-color: #A0CED9;"><h4>ЧОМУ "ТЕХНАР"?</h4></div>
-    <div class="card-body" style="background-color: #c6e5ed;">
-      <p>«Технар» – новостворена українська онлайн-школа з підготовки до ЗНО, яка,
-        навідміну від інших шкіл, дає можливість своїм підписникамбезкоштовноотримувати освіту,
-        переглядаючи всім доступні уроки на YouTube. Для тих, хто бажає займатися далі з одним із
-        наших викладачів, створені спеціальні закриті курси, де кожен може напряму звернутися до
-        вчителя і отримати відповідь</p>
-    </div>
-  </div>
 
 
-  <br>
-  <div class="card">
-    <div class="row">
-      <div class="col-md-9">
-        <div class="card-header pb-0" style="background-color: #f1978c;"><h4>YOUTUBE-КАНАЛ</h4></div>
-        <div class="card-body" style="background-color: #ffcbc7;">
-          <p>Ми підтримуємо ідею доступної освіти для всіх, і вважаємо, що кожен, який прагне отримати
-            які-небудь знання з тих чи інших шкільних предметів, повинен мати можливість їх здобути на
-            просторах інтернету. На україномовному YouTube не так багато освітніх матеріалів з математики
-            та фізики, і саме тому наша команда вирішила це виправити</p>
-        </div>
+
+      <div class="row text-right mt-4">
+      <div class="col-lg-3 col-md-4 col-sm-5 mx-auto order-md-2">
+        <img class="about-us" src="{% static 'image/school-lesson.png' %}" alt="why"
+             style="height: 180pt; width: auto;">
       </div>
-      <div class="col-md-3">
-        <img src="{% static 'image/youtube-kanal.png' %}" class="card-img-top home-card"
-             style="height: 180pt; width: auto;" alt="youtube">
+      <div class="col-lg-9 col-md-8 com-sm-7 my-auto order-md-1" id="youtube-text">
+        <h2>НАШ YOUTUBE-КАНАЛ</h2>
+            <p>Ми підтримуємо ідею доступної освіти для всіх, і вважаємо, що кожен, хто прагне отримати якісні
+              знання з тих чи інших шкільних предметів, повинен мати можливість їх здобути на просторах
+              інтернету. На україномовному YouTube не так багато освітніх матеріалів з математики та фізики,
+              і саме тому наша команда вирішила це виправити.</p>
       </div>
     </div>
-  </div>
-  <br>
-  <div class="card">
-    <div class="row">
-      <div class="col-md-3">
-        <img src="{% static 'image/school-lesson.png' %}" class="card-img-top home-card"
-             style="height: 180pt; width: auto;" alt="school lesson">
+
+
+      <div class="row mt-4 mb-4">
+      <div class="col-lg-3 col-md-4 mx-auto col-sm-5">
+        <img class="about-us" src="{% static 'image/youtube-kanal.png' %}" alt="why"
+             style="height: 180pt; width: auto;">
       </div>
-      <div class="col-md-9">
-        <div class="card-header pb-0" style="background-color: #EFE9F4;"><h4>НА КОГО РОЗРАХОВАНІ КУРСИ «ТЕХНАРЯ»?</h4>
-        </div>
-        <div class="card-body" style="background-color: #EFE9F4;">
-          <p>Курси нашої онлайн-школи підійдуть абсолютно для всіх школярів, які мають намір гідно скласти ЗНО
-            з математики чи фізики.</p>
-        </div>
+      <div class="col-lg-9 col-md-8 com-sm-7 my-auto">
+          <h2>ДЛЯ КОГО ПІДІЙДУТЬ НАШІ КУРСИ?</h2>
+        <p>Курси нашого онлайн-ресурсу підійдуть абсолютно для всіх школярів, які мають намір гідно скласти ЗНО з
+          математики чи фізики, а також для всіх, хто відчуває прогалини в знаннях з певних розділів чи тем.</p>
       </div>
     </div>
-  </div>
-  <br>
-  <br>
-  <br>
+
 
 {% endblock content %}
