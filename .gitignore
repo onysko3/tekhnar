@@ -1,6 +1,10 @@
 .env
+del
 __pycache__/
 db.sqlite3
 media/teachers
 media/blog
 media/courses
+docker-compose.yml
+docker-compose-prod.yml
+staticfiles/

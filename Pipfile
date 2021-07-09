@@ -12,6 +12,9 @@ django-crispy-forms = "==1.9.2"
 pillow = "*"
 django-guardian = "*"
 django-debug-toolbar = "==2.2"
+psycopg2-binary = "*"
+whitenoise = "==5.1.0"
+gunicorn = "*"
 
 [dev-packages]
 
