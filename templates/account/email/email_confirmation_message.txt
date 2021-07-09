@@ -1,7 +1,7 @@
 {% load account %}
 {% load i18n %}
 
-{% block content %}{% autoescape off %}{% user_display user as user_display %}
+{% autoescape off %}{% user_display user as user_display %}
 Вітаємо!
 
 Це лист-підтвердження профілю {{ user_display }} на сайті онлайн школи «Технар», яка займається підготовкою до зовнішнього незалежного оцінювання з математики та фізики.Для того, аби активувати свій акаунт, перейдіть за посиланням
@@ -12,4 +12,4 @@
 
 З повагою,
 Онлайн-школа «Технар»
-{% endautoescape %}{% endblock %}
+{% endautoescape %}

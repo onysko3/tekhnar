@@ -10,6 +10,7 @@ class Course(models.Model):
     subject = models.CharField('Предмет', max_length=50)
     start_date = models.DateField('Початок')
     description = models.TextField('Опис')
+    instruction = models.TextField('Інструкція', help_text='Відображається на закритій сторінці всіх уроків курсу')
     slug = models.SlugField('Слаг', unique=True, help_text='Посилання на латиниці. Приклад: matematika-zno-2021')
     teacher = models.ForeignKey(Teacher, verbose_name='Викладач', on_delete=models.CASCADE, related_name='courses')
     picture = models.ImageField('Обкладинка', upload_to='courses/')
@@ -20,6 +21,7 @@ class Course(models.Model):
     class Meta:
         verbose_name = 'Курс'
         verbose_name_plural = 'Курси'
+        ordering = ['-updated', '-created']
 
     def display_description_safe(self):
         if '<script>' in self.description:

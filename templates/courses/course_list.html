@@ -21,7 +21,7 @@
   <img class="card-img-top" src="{{ course.picture.url }}" alt="course" style="height: 220pt; width: 100%; object-fit: cover;">
   <div class="card-body">
     <h5 class="card-title">{{ course.title }}</h5>
-    <p class="card-text">{% autoescape off %}{{ course.description|truncatewords_html:63 }}{% endautoescape %}...</p>
+    <p class="card-text">{% autoescape off %}{{ course.short_description }}{% endautoescape %}</p>
     <p class="card-text text-right"><a class="btn btn-primary stretched-link" href="{{ course.get_absolute_url }}">Детальніше</a></p>
   </div>
 </div>

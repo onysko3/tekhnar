@@ -23,6 +23,7 @@ class Lesson(models.Model):
     class Meta:
         verbose_name = 'Урок'
         verbose_name_plural = 'Уроки'
+        ordering = ['created']
 
     def display_description_safe(self):
         if '<script>' in self.description:
