@@ -1,5 +1,5 @@
 .env
-del
+_.env
 __pycache__/
 db.sqlite3
 media/teachers
@@ -8,3 +8,4 @@ media/courses
 docker-compose.yml
 docker-compose-prod.yml
 staticfiles/
+Dockerfile
