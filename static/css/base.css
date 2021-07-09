@@ -18,13 +18,61 @@ p {
 .jumbo-hr {
     border-width: 2pt;
     border-color: #1a1a1a;
-    width: 160pt;
+    width: 20%;
 }
 
 
-#jumbo-title {
-    font-size: 50pt;
+.about-us {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
+
+@media only screen and (max-width: 767.5px) {
+    #youtube-text {
+        text-align: left;
+    }
+}
+
+
+@media only screen and (max-width: 480px) {
+    #youtube-text {
+        text-align: left;
+    }
+    #jumbo-title {
+    font-size: 30pt;
+    }
+}
+
+
+@media only screen and (max-width: 530px) {
+    #blog-photo {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 200pt;
+    }
+
+}
+
+@media only screen and (min-width: 530px) {
+    #blog-photo {
+        float: left;
+    }
+
+}
+
+
+@media only screen and (max-width: 350px) {
+    #youtube-text {
+        text-align: left;
+    }
+    #jumbo-title {
+    font-size: 15pt;
+    }
+}
+
 
 #home-arrow {
     font-size: 40pt;

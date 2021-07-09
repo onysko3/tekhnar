@@ -3,7 +3,7 @@
 {% block title %}{{ course }}{% endblock title %}
 
 {% block content %}
-  <div class="row mt-4">
+  <div class="row mt-4 mb-3">
     <div class="col-md-6 mr-0">
       <img src="{{ course.picture.url }}" alt="{{ course.title }}"
            class="img-thumbnail" style="height: 220pt; width: 100%; object-fit: cover;">
@@ -13,8 +13,15 @@
       <hr>
       <p><span class="course-main-info"><i class="fas fa-pencil-alt mr-2"></i>Опис: </span>{{ course.short_description }}</p>
       <p><span class="course-main-info"><i class="fa fa-graduation-cap mr-1"></i>Предмет: </span>{{ course.subject }}</p>
-      <p><span class="course-main-info"><i class="fas fa-user ml-1 mr-2"></i>Викладач: </span>{{ course.teacher }}</p>
+      <p><span class="course-main-info"><i class="fas fa-user ml-1 mr-2"></i>Викладач: </span>
+        <a class="text-decoration-none text-reset" href="{{ course.teacher.get_absolute_url }}">{{ course.teacher.last_name }}
+          {{ course.teacher.first_name }} {{ course.teacher.patronymic }}</a>
+      </p>
       <p><span class="course-main-info"><i class="fas fa-table mr-2"></i>Початок: </span>{{ course.start_date|date:"d.m.Y" }}</p>
+      {% if has_perm %}
+        <a class="btn btn-primary btn-sm text-center btn-block" href="{% url 'lesson_list' course.slug %}">
+          <i class="fas fa-file-certificate mr-2"></i>Перейти до курсу</a>
+      {% endif %}
 
     </div>
   </div>

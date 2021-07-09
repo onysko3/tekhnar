@@ -13,7 +13,7 @@ class Lesson(models.Model):
     )
     title = models.CharField('Заголовок', max_length=200)
     description = models.TextField('Опис')
-    course = models.ForeignKey(Course, on_delete=models.CASCADE, verbose_name='Курс')
+    course = models.ForeignKey(Course, on_delete=models.CASCADE, verbose_name='Курс', related_name='lessons')
     created = models.DateTimeField(auto_now_add=True)
     edited = models.DateTimeField(auto_now=True)
     youtube = models.URLField('Посилання на лекцію', blank=True, null=True)
@@ -30,7 +30,7 @@ class Lesson(models.Model):
         return mark_safe(self.description)
 
     def get_absolute_url(self):
-        return reverse('lesson_detail', args=[str(self.id)])
+        return reverse('lesson_detail', kwargs={'slug': self.course.slug, 'pk':self.id})
 
     def __str__(self):
         return self.title

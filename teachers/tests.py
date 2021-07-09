@@ -10,7 +10,6 @@ class TeacherTests(TestCase):
             first_name='John',
             last_name='Smith',
             slug='john-smith',
-            phone='+1234567891',
             email='johnsmith@gmail.com',
             bio='I\'m John Smith',
             avatar='no_photo.jpg'
@@ -20,7 +19,6 @@ class TeacherTests(TestCase):
         self.assertEqual(f'{self.teacher.first_name}', 'John')
         self.assertEqual(f'{self.teacher.last_name}', 'Smith')
         self.assertEqual(f'{self.teacher.slug}', 'john-smith')
-        self.assertEqual(f'{self.teacher.phone}', '+1234567891')
         self.assertEqual(f'{self.teacher.email}', 'johnsmith@gmail.com')
         self.assertEqual(f'{self.teacher.bio}', 'I\'m John Smith')
 
@@ -33,7 +31,7 @@ class TeacherTests(TestCase):
 
     def test_teacher_detail_view(self):
         response = self.client.get(self.teacher.get_absolute_url())
-        no_response = self.client.get('teachers/qwerty')
+        no_response = self.client.get('teachers/qwerty/')
         self.assertEqual(response.status_code, 200)
         self.assertEqual(no_response.status_code, 404)
         self.assertContains(response, 'John Smith')

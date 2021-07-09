@@ -32,8 +32,7 @@
           <i class="fas fa-user mr-2"></i>{{ request.user.first_name }} {{ request.user.last_name }}
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Мої курси</a>
-          <div class="dropdown-divider"></div>
+{#          <div class="dropdown-divider"></div>#}
           <form method="POST" action="{% url 'account_logout' %}">
             {% csrf_token %}
             <button class="dropdown-item" type="submit">Вийти</button>

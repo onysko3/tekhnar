@@ -30,7 +30,11 @@ urlpatterns = [
     path('courses/', include('courses.urls')),
     path('teachers/', include('teachers.urls')),
     path('blog/', include('posts.urls')),
-    path('lessons/', include('lessons.urls')),
     path('', include('pages.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns = [path('__debug__/', include(debug_toolbar.urls)), ] + urlpatterns

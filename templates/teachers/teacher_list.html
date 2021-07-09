@@ -13,19 +13,19 @@
       <h3>{{ teacher.last_name }} {{ teacher.first_name }} {{ teacher.patronymic }}</h3>
         <div class="text-dark">
       {% if teacher.email %}
-        <p class="mb-1"><a class="text-decoration-none text-reset" href="mailto:tekhnar.zno@gmail.com"><i
+        <p class="mb-1"><a class="text-decoration-none" href="mailto:tekhnar.zno@gmail.com"><i
             class="fas fa-envelope-open mr-2"></i>{{ teacher.email }}</p></a>
     {% endif %}
     {% if teacher.instagram %}
-        <p class="mb-1"><a class="text-decoration-none text-reset" href="https://www.instagram.com/{{ teacher.instagram }}"><i
+        <p class="mb-1"><a class="text-decoration-none" href="https://www.instagram.com/{{ teacher.instagram }}"><i
             class="fab fa-instagram mr-2"></i>@{{ teacher.instagram }}</p></a>
     {% endif %}
     {% if teacher.facebook %}
-        <p class="mb-1"><a class="text-decoration-none text-reset" href="https://fb.com/{{ teacher.facebook }}"><i
+        <p class="mb-1"><a class="text-decoration-none" href="https://fb.com/{{ teacher.facebook }}"><i
             class="fab fa-facebook-square mr-2"></i>@{{ teacher.facebook }}</p></a>
     {% endif %}
     {% if teacher.telegram %}
-        <p class="mb-1"><a class="text-decoration-none text-reset" href="https://t.me/{{ teacher.telegram }}"><i
+        <p class="mb-1"><a class="text-decoration-none" href="https://t.me/{{ teacher.telegram }}"><i
             class="fab fa-telegram mr-2"></i>@{{ teacher.telegram }}</p></a>
     {% endif %}
     <p class="mb-1">{{ teacher.summary }}</p>

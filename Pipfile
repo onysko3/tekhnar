@@ -11,6 +11,7 @@ django-allauth = "*"
 django-crispy-forms = "==1.9.2"
 pillow = "*"
 django-guardian = "*"
+django-debug-toolbar = "==2.2"
 
 [dev-packages]
 

@@ -8,10 +8,12 @@ class Post(models.Model):
     slug = models.SlugField('Слаг', unique=True, help_text='Посилання на латиниці. Приклад: zno-na-200')
     description = models.TextField('Опис')
     picture = models.ImageField(upload_to='blog/', blank=True, null=True)
+    created = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         verbose_name = 'Пост'
         verbose_name_plural = 'Пости'
+        ordering = ['-created', 'title']
 
     def display_description_safe(self):
         if '<script>' in self.description:

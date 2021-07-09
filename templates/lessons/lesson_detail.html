@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Уроки | {{ lesson.course.title }}{% endblock %}
+{% block title %}Уроки | {{ lesson.course }}{% endblock %}
 
 {% block content %}
   <h1 class="text-center mt-4">{{ lesson.title }}</h1>
@@ -9,7 +9,7 @@
      /
     <a class="text-decoration-none text-reset" href="{{ lesson.course.get_absolute_url }}">{{ lesson.course.title }}</a>
     /
-    <a class="text-decoration-none text-reset" href="#">Уроки</a>
+    <a class="text-decoration-none text-reset" href="{% url 'lesson_list' lesson.course.slug %}">Уроки</a>
     /
     {{ lesson.title }}
   </p>

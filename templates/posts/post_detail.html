@@ -2,14 +2,23 @@
 
 {% block title %}{{ post.title }}{% endblock title %}
 
+{% block style %}
+  <style>
+
+  </style>
+
+{% endblock style %}
+
 {% block content %}
   <h1 class="text-center mb-3 mt-4">{{ post.title }}</h1>
-  <img class="img-thumbnail mb-2 mr-4 float-left" src="{{ post.picture.url }}" alt="{{ post.title }}"
+  {% if post.picture %}
+    <span id="blog-photo">
+  <img class="img-thumbnail mb-2 mr-4" src="{{ post.picture.url }}" alt="{{ post.title }}"
            style="height: 100%; width: 200pt; object-fit: cover;">
-  {% autoescape off %}
-    <p>
+    </span>
+  {% endif %}
+    {% autoescape off %}
       {{ post.description }}
-    </p>
-  {% endautoescape %}
+    {% endautoescape %}
 
 {% endblock content %}
