@@ -230,15 +230,6 @@ AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
-
-# Bunny.net CDN Access
-#
-
-BUNNY_ZONENAME = 'myzone'
-
-BUNNY_PASSWORD = 'arandom-string-of-numbersand-letters'
-
-
 SITE_ID = 1
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
