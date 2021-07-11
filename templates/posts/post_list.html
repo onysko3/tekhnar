@@ -15,7 +15,9 @@
           {% endif %}
           <div class="card-body">
             <h5 class="card-title">{{ post.title }}</h5>
+            {% autoescape off %}
             <p class="card-text">{{ post.description|truncatewords_html:33 }}</p>
+            {% endautoescape %}
             <a href="{{ post.get_absolute_url }}" class="btn btn-primary stretched-link">Детальніше</a>
           </div>
         </div>
