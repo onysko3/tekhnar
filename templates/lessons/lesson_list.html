@@ -4,7 +4,12 @@
 
 {% block content %}
     <h1 class="mb-3 text-center mt-4">Уроки курсу «{{ flesson.course.title }}»</h1>
-    <p class="text-center text-muted mb-3">{{ flesson.course.instruction }}</p>
+    <p class="text-center text-muted mb-3">
+      {% autoescape off %}
+      {{ flesson.course.instruction }}
+      {% endautoescape %}
+
+    </p>
 
     <div class="list-group">
 
