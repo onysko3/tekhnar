@@ -20,7 +20,7 @@
 {% block content %}
   <br>
   {#  <div class="jumbotron" style="background-color: #E9EDDE;">  style="background-image: url({% static 'image/jumbotron-bg.png' %});" #}
-  <div class="jumbotron jumbo-photos" id="jumbotron-main">
+  <div class="jumbotron jumbo-photos mb-3 pb-3" id="jumbotron-main">
     <div class="container">
       <div class="mx-auto text-center">
         <h6 class="jumbo-subject">ФІЗИКА</h6>
@@ -28,14 +28,22 @@
         <h1 class="display-4" id="jumbo-title">РОЗВИВАЙСЯ РАЗОМ<br>З «ТЕХНАРЕМ»</h1>
         <hr class="jumbo-hr">
         <h6 class="jumbo-subject">МАТЕМАТИКА</h6>
-
+        <a href="{% url 'course_list' %}" class="btn btn-success progress-bar-striped progress-bar-animated pb-0 mt-3"><h5>Наші Курси</h5></a>
       </div>
     </div>
+  </div>
+<div class="text-center mb-4 mt-0">
+  <div class="btn-group mt-0" role="group" aria-label="social networks">
+  <a href="https://www.youtube.com/channel/UC5JAwQBUsDKFspS1BetNwAw" class="btn btn-outline-danger"><i class="fab fa-youtube mr-2"></i>YouTube</a>
+  <a href="https://t.me/tekhnar_chat" class="btn btn-outline-primary"><i class="fab fa-telegram-plane mr-2"></i>Telegram</a>
+  <a href="https://www.instagram.com/tekhnar_zno" class="btn btn-outline-warning text-dark"><i class="fab fa-instagram mr-2"></i>Instagram</a>
+    <a href="https://www.facebook.com/tekhnar.zno" class="btn btn-outline-info"><i class="fab fa-facebook-f mr-2"></i>Facebook</a>
+</div>
   </div>
 
   <div class="text-center">
     <a class="text-reset text-decoration-none" href="#more">
-      <h6 class="mb-0">Дізнатися більше</h6>
+      <h6 class="mb-0 text-dark">Дізнатися більше</h6>
       <i class="fas fa-angle-down home-arrow" id="home-arrow"></i>
     </a>
   </div>
