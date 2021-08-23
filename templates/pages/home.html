@@ -10,6 +10,11 @@
           background-image: url({% static 'image/fizik.png' %}), url({% static 'image/matematik.png' %});
       }
   }
+  @media only screen and (max-width: 530px) {
+        .social-name {
+          display: none;
+      }
+  }
 
 
 
@@ -34,10 +39,10 @@
   </div>
 <div class="text-center mb-4 mt-0">
   <div class="btn-group mt-0" role="group" aria-label="social networks">
-  <a href="https://www.youtube.com/channel/UC5JAwQBUsDKFspS1BetNwAw" class="btn btn-outline-danger"><i class="fab fa-youtube mr-2"></i>YouTube</a>
-  <a href="https://t.me/tekhnar_chat" class="btn btn-outline-primary"><i class="fab fa-telegram-plane mr-2"></i>Telegram</a>
-  <a href="https://www.instagram.com/tekhnar_zno" class="btn btn-outline-dark"><i class="fab fa-instagram mr-2"></i>Instagram</a>
-    <a href="https://www.facebook.com/tekhnar.zno" class="btn btn-outline-primary"><i class="fab fa-facebook-f mr-2"></i>Facebook</a>
+  <a href="https://www.youtube.com/channel/UC5JAwQBUsDKFspS1BetNwAw" class="btn btn-outline-danger"><i class="fab fa-youtube"></i><span class="social-name ml-2">YouTube</span></a>
+  <a href="https://t.me/tekhnar_chat" class="btn btn-outline-primary"><i class="fab fa-telegram-plane"></i><span class="social-name ml-2">Telegram</span></a>
+  <a href="https://www.instagram.com/tekhnar_zno" class="btn btn-outline-dark"><i class="fab fa-instagram"></i><span class="social-name ml-2">Instagram</span></a>
+    <a href="https://www.facebook.com/tekhnar.zno" class="btn btn-outline-primary"><i class="fab fa-facebook-f m-1"></i><span class="social-name ml-2">Facebook</span></a>
 </div>
   </div>
 
