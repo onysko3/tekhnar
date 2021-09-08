@@ -20,7 +20,7 @@
       <p><span class="course-main-info"><i class="fas fa-table mr-2"></i>Початок: </span>{{ course.start_date|date:"d.m.Y" }}</p>
       {% if has_perm %}
         <a class="btn btn-primary btn-sm text-center btn-block" href="{% url 'lesson_list' course.slug %}">
-          <i class="fas fa-file-certificate mr-2"></i>Перейти до курсу</a>
+          <i class="far fa-bookmark mr-2"></i>Перейти до курсу</a>
       {% endif %}
 
     </div>
