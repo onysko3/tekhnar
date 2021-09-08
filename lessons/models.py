@@ -19,6 +19,7 @@ class Lesson(models.Model):
     youtube = models.URLField('Посилання на лекцію', blank=True, null=True)
     materials = models.URLField('Посилання на матеріали', blank=True, null=True)
     homework = models.URLField('Посилання на домашнє завдання', blank=True, null=True)
+    homework_example = models.URLField('Посилання на відеорозбір ДЗ', blank=True, null=True)
 
     class Meta:
         verbose_name = 'Урок'

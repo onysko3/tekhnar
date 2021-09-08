@@ -28,6 +28,9 @@
   {% if lesson.homework %}
   <a class="btn btn-outline-primary" href="{{ lesson.homework }}"><i class="fas fa-home mr-2"></i>Домашнє завдання</a>
   {% endif %}
+  {% if lesson.homework_example %}
+  <a class="btn btn-outline-primary" href="{{ lesson.homework_example }}"><i class="fas fa-video mr-2"></i>Відеорозбір ДЗ</a>
+  {% endif %}
 </div>
   </div>
 <br><br>
