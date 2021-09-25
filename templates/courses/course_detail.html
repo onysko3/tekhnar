@@ -21,6 +21,9 @@
       {% if has_perm %}
         <a class="btn btn-primary btn-sm text-center btn-block" href="{% url 'lesson_list' course.slug %}">
           <i class="far fa-bookmark mr-2"></i>Перейти до курсу</a>
+        {% else %}
+                <a class="btn btn-primary btn-sm text-center btn-block" href="{% url 'contacts' %}#consult">
+          <i class="fas fa-phone-alt mr-2"></i>Консультація</a>
       {% endif %}
 
     </div>
