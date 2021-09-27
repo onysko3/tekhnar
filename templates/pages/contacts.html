@@ -40,7 +40,7 @@
       <hr>
 <div class="row d-flex justify-content-center mb-5">
     <div class="col-md-5 text-center">
-      <h3 id="consult">Безкоштовна консультація</h3>
+      <h3 id="consult">Записатися на курс</h3>
       {% if error %}
             <div class="alert alert-danger" role="alert">
   При обробці запиту виникла помилка!
@@ -48,14 +48,14 @@
       {% endif %}
       {% if success %}
         <div class="alert alert-success" role="alert">
-  Запит на консультацію надіслано! Очікуйте дзвінка від оператора.
+  Запит надіслано! Очікуйте дзвінка від оператора.
 </div>
       {% endif %}
 <form method="post">
     {% csrf_token %}
     {{ form|crispy }}
     <div class="form-actions">
-      <button class="btn btn-primary" type="submit">Підтвердити</button>
+      <button class="btn btn-primary" type="submit">Записатися</button>
     </div>
 </form>
 </div>
